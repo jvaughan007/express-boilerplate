@@ -11,10 +11,12 @@ const morganOption = (NODE_ENV === 'production')
     ? 'tiny'
     : 'common';
 
+// Standard Middleware
 app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
+// Routes
 app.get('/', (req, res) => {
     res.send('Hello, world!');
 });
